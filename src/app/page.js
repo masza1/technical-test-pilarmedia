@@ -1,101 +1,137 @@
-import Image from "next/image";
-
-export default function Home() {
+const OOPArticle = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="max-w-3xl mx-auto p-6">
+      <h1 className="text-3xl font-bold text-center mb-6">Object-Oriented Programming (OOP) dalam JavaScript</h1>
+      <p className="text-lg text-gray-700 mb-4">
+        Pemrograman Berorientasi Objek (OOP) adalah paradigma pemrograman yang mengorganisir kode dalam bentuk objek. Objek ini
+        memiliki data (disebut atribut) dan metode (fungsi yang beroperasi pada data). OOP membantu mengorganisir kode untuk
+        membuatnya lebih modular, mudah dipelihara, dan dapat diperluas.
+      </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">1. Encapsulation (Enkapsulasi)</h2>
+      <p className="text-lg text-gray-700 mb-4">
+        Enkapsulasi adalah konsep untuk menyembunyikan detail implementasi dari objek dan hanya mengekspos fungsionalitas
+        yang diperlukan kepada pengguna objek tersebut. Ini membantu melindungi data dari akses langsung dan memungkinkan
+        kontrol lebih besar atas bagaimana data digunakan.
+      </p>
+      <p className="text-lg text-gray-700 mb-4">
+        Contoh: Kita memiliki objek <strong>Animal</strong> yang hanya mengizinkan perubahan pada nama hewan melalui
+        metode tertentu.
+      </p>
+
+      <pre className="bg-gray-100 p-4 rounded-md">
+        <code>
+          { `class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  // Getter
+  getName() {
+    return this.name;
+  }
+
+  // Setter
+  setName(name) {
+    this.name = name;
+  }
+}
+
+const lion = new Animal("Lion");
+console.log(lion.getName()); // Output: Lion
+
+lion.setName("Tiger");
+console.log(lion.getName()); // Output: Tiger`}
+        </code>
+      </pre>
+
+      <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">2. Polymorphism (Polimorfisme)</h2>
+      <p className="text-lg text-gray-700 mb-4">
+        Polimorfisme adalah kemampuan objek untuk mengambil banyak bentuk. Dalam OOP, ini berarti objek dapat memiliki
+        metode yang sama tetapi implementasi yang berbeda. Konsep ini memungkinkan kita untuk menggunakan metode yang
+        sama pada objek yang berbeda dengan cara yang disesuaikan.
+      </p>
+      <p className="text-lg text-gray-700 mb-4">
+        Contoh: Kita akan membuat dua jenis hewan, <strong>Dog</strong> dan <strong>Cat</strong>, yang keduanya memiliki
+        metode <strong>makeSound()</strong>, tetapi dengan implementasi yang berbeda.
+      </p>
+
+      <pre className="bg-gray-100 p-4 rounded-md">
+        <code>
+          { `class Animal {
+  makeSound() {
+    console.log("Some generic animal sound");
+  }
+}
+
+class Dog extends Animal {
+  makeSound() {
+    console.log("Bark");
+  }
+}
+
+class Cat extends Animal {
+  makeSound() {
+    console.log("Meow");
+  }
+}
+
+const dog = new Dog();
+const cat = new Cat();
+
+dog.makeSound(); // Output: Bark
+cat.makeSound(); // Output: Meow`}
+        </code>
+      </pre>
+
+      <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">3. Inheritance (Pewarisan)</h2>
+      <p className="text-lg text-gray-700 mb-4">
+        Pewarisan memungkinkan satu kelas untuk mewarisi properti dan metode dari kelas lain. Ini memungkinkan kita untuk
+        membuat kelas baru dengan fungsionalitas yang ada tanpa perlu menulis ulang kode yang sama.
+      </p>
+      <p className="text-lg text-gray-700 mb-4">
+        Contoh: Kelas <strong>Dog</strong> mewarisi kelas <strong>Animal</strong> dan menambahkan fungsionalitas baru,
+        seperti metode <strong>bark()</strong>.
+      </p>
+
+      <pre className="bg-gray-100 p-4 rounded-md">
+        <code>
+          { `class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  makeSound() {
+    console.log("Some generic animal sound");
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+
+  bark() {
+    console.log("Woof! Woof!");
+  }
+}
+
+const dog = new Dog("Buddy", "Golden Retriever");
+console.log(dog.name); // Output: Buddy
+console.log(dog.breed); // Output: Golden Retriever
+dog.makeSound(); // Output: Some generic animal sound
+dog.bark(); // Output: Woof! Woof!`}
+        </code>
+      </pre>
+
+      <p className="text-lg text-gray-700 mt-6">
+        Dengan konsep OOP, kita dapat mengorganisir kode dengan lebih baik, memungkinkan reuse dan pemeliharaan yang lebih
+        mudah. Ketiga konsep ini, Enkapsulasi, Polimorfisme, dan Pewarisan, adalah pilar dasar dari OOP yang sangat berguna
+        dalam pengembangan perangkat lunak yang lebih kompleks.
+      </p>
     </div>
   );
-}
+};
+
+export default OOPArticle;
